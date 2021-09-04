@@ -1,0 +1,13 @@
+body{
+    height: 3000px;
+}
+
+.box{
+    width: 550px;
+    height: 350px;
+    border: 2px dashed lightgreen;
+    background-image: url(../imgs/coffee.jpg);
+    background-attachment: fixed;
+    background-position: bottom ;
+    background-size: auto 100%;
+}

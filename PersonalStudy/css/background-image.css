@@ -1,0 +1,9 @@
+.box{
+    background-image: 
+    url("../imgs/logo_naver.png");
+    /*반복을 적용하지 않겠다. */
+    background-repeat: no-repeat;
+    width: 750px;
+    height: 500px;
+    border: 2px dashed lightcoral;
+}
