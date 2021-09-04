@@ -1,0 +1,20 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background: tomato;
+    border-radius: 10px;
+    margin: 30px;
+    animation: movemove 2s 2s;
+    animation-fill-mode: both;
+}
+
+@keyframes movemove{
+    0%{
+        transform: translate(100px, 100px);
+        background: dodgerblue;
+    }
+    100%{
+        transform: translate(300px, 100px);
+        background: yellowgreen;
+    }
+}

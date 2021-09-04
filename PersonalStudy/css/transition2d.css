@@ -1,0 +1,27 @@
+.box{
+    width: 200px;
+    height: 200px;
+    background : tomato;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:  30px;
+    transition: 1s;
+    margin:  100px;
+    
+}
+/* position을 쓰면 자연스럽게 이동이 되지 않음  left,top을 0으로 주는 방법도 있긴한데
+postion은 애니매이션에 특화된 옵션이 아니기떄문에 나중에 문제가 발생할 수 있다.
+그래서 transform을 사용하는것이 좋음*/ 
+.box:hover{
+    transform: skewY(45deg);
+}
+
+/*
+.box:hover{
+    position: relative;
+    left:30px;
+    top:30px;
+}
+*/

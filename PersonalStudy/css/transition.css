@@ -1,9 +1,9 @@
 .box{
     width: 100px;
     height: 100px;
-    background: tomato;
+    background: rgb(168, 129, 123);
     margin: 50px;
-    transition: .4s;
+    transition: 2s linear;
 }
 .box:hover{
     width: 300px;
