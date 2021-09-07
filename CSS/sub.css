@@ -1,0 +1,53 @@
+
+
+table{
+    border:1px solid;
+}
+td{
+    border:1px solid black;
+}
+.header th:nth-child(1){
+    border:1px solid;
+ 
+    width: 100px;
+   
+}
+
+.header th:nth-child(2){
+ 
+    text-align: center;
+    border:1px solid;
+
+    height: 40px;
+    width: 700px;
+}
+
+th:first-child
+th:last-child
+.name td:nth-child(1){
+    width:100px;
+    height:80px;
+}
+
+.name td:nth-child(2){
+    width:70px;
+    height:40px;
+}
+
+.birth td:nth-child(1){
+    height: 30px;
+}
+
+/*
+.phone td:nth-child(1){
+    border:2px solid;
+    height: 20px;
+    width: 100px;
+}
+*/
+
+
+
+
+
+
