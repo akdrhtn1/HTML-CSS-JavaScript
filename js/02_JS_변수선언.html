@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //  변수선언 키워드(명령어) : var, let, const
+        //  변수명 사용문자 : 영문대소문자, 숫자, _, $
+        //  기본자료형 : 문자열(string), 숫자(number), 불린(boolean)
+        //  undefined(값할당안됨), null
+        var str = "안녕하세요(문자열)";
+        var num = 100;
+        var bool = true;
+        var vNull = null;
+        var undef;
+        document.write("문자열 출력: " + str, "<br>");
+        document.write("숫자값 출력: " + num, "<br>");
+        document.write("숫자값 출력: " + num + 1 , "<br>");
+        document.write("숫자값 출력: " + (num + 1) , "<br>");
+        document.write("bool 출력: " + bool, "<br>");
+        document.write("vNull 출력: " + vNull, "<br>");
+        document.write("undef 출력: " + undef, "<br>");
+        document.write("<hr>");
+
+
+        document.write("typeof str : "+ typeof str, "<br>");
+        document.write("typeof num : "+ typeof num, "<br>");
+        document.write("typeof bool : "+ typeof bool, "<br>");
+        document.write("typeof vNull : "+ typeof vNull, "<br>");
+        document.write("typeof undef : "+ typeof undef, "<br>");
+        document.write("<hr>");
+        str = 500;
+        str = str + 230;
+        document.write("str: " + str, "<br>");
+        str = true;
+        document.write("str: " + str, "<br>");
+
+        var sum = num + str;
+        document.write("sum: " + sum );
+
+        var sum = 0;
+        
+        sum = sum + 10;
+        document.write("sum : " + sum, "<br>");
+        document.write("<hr>");
+        // NaN(Not a Number) : 숫자가 아님 - 연산결과가 숫자가 아닌 경우
+        document.write("num + undef : " + (num + undef), "<br>");  // 결과 : NaN
+        document.write("num * 'A' : " + (num * 'A'),"<br>");
+        document.write("'AAA' * 'B' : " + ('AAA' * 'B'),"<br>");
+
+        //자바스크립트에서 오류가 발생하면 이후의 자바스크립트 실행 안됨
+        document.wwww('자바스크립트 오류발생 코드')
+        document.write("<p> ---  JavaScript 끝 ---- </p>");
+
+    
+    </script>
+</head>
+<body>
+    <h1>자바스크립트의 변수선언 알아보기</h1>
+</body>
+</html>
