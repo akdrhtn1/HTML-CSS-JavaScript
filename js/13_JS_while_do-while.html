@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+
+
+    let num = 1;
+    let sum=0;
+
+    while(num <= 10){
+        sum += num;
+        console.log(`num: ${num} , sum : ${sum}`);
+        num++;    
+    }
+    document.write(`1~10까지의 합: ${sum} <br>`);
+    document.write('<hr>');
+
+    //(실습) 위의 while문과 동일한 결과를 만드는 while문 작성
+    sum = 0;
+    num = 0;
+    
+    while(num < 10){
+        num++;  
+        sum += num;
+        console.log(`num: ${num} , sum : ${sum}`);
+          
+    }
+    document.write(`1~10까지의 합: ${sum} <br>`);
+    document.write('<hr>');
+
+    sum = 0;
+    num = 1;
+    do{
+        sum += num;
+        console.log(`num: ${num} , sum : ${sum}`);
+        num++;    
+    }while(num<=10);
+    document.write(`1~10까지의 합: ${sum} <br>`);
+    document.write('<hr>');
+
+    //반복문 제어 :break; continue;
+    num = 1;
+    while(num <= 10){
+        document.write(`num : ${num} <br>`);
+        if(num == 5){
+            document.write('break문 만나서 반복종료 !!!', '<br>');
+            break;
+        }
+        num++;
+    }
+
+    document.write("<hr>");
+    document.write()
+
+    outer : 
+    for(let i=1; i<=5; i++){
+        for(let k=11; k<=15; k++){
+            if(i == 4 && k==13){
+                break outer;
+            }
+            document.write('i: '+i+', k: ' +k, " <br>");
+        }
+        document.write('<hr>')
+    }
+
+
+    //break : 반복문 종료하고 빠져나감
+    //continue : continue 문 이후의 실행문을 실행하지 않고 다음 반복 진행
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

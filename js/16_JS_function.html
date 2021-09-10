@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        //자동실행 함수
+        //매개변수 없는 익명함수 호출 : (function(){})();
+        //매개변수가 있는 형태 : (function(매개변수){})(매개변수값);
+        document.write('<h3>자동실행 함수</h3>');
+        (function(param){
+            document.write('자동실행함수 - 매개변수값 : ' + param,"<br>");
+        })('김유신!!!!'); //자동실행이 됨 함수 처리 
+        
+        document.write('<hr><hr>');
+
+        //======================================
+        // 콜백(callback) 함수 : 실행시 나중에 호출되어 실행되는 함수
+        document.write('<h3>콜백(callback) 함수 </h3>');
+        function showMessage(msg){
+            document.write('<p>' + msg + '</p>');
+        }
+        showMessage('홍길동');
+
+        var fn2 = function(param){
+            param('안녕~ 콜백콜백함수야');
+        };
+        fn2(function(msg){
+            document.write('<h2>' + msg + '</h2>');
+        });
+
+    </script>
+</head>
+<body>    
+</body>
+</html>
