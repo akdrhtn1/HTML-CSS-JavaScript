@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var tv ={
+            width : 1100,
+            height : 700,
+            color : "검정",
+            on : ()=>{
+                console.log('TV전원 ON')
+            },
+            off: ()=>{
+                console.log('TV전원 OFF')
+            }
+        };
+
+        for( let prop in tv){
+            document.write('tv.'+prop + ':' + tv[prop], '<br>');
+        }
+        document.write('<hr><hr>');
+        //window 객체가 갖고 있는 속성, 메소드(함수) 확인
+        document.write('<h3></h3>');
+
+        //window 객체가 갖고 있는 속성, 메소드(함수) 확인
+        document.write('<h3>windows 객체가 갖고 잇는 속성, 메소드(함수)</h3>');
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

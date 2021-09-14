@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //마우스 이번트
+        //onmouseover : 마우스가 해당영역에 들어오면 발생(위에 있으면)
+        //onmouseout : 마우스가 해당영역에 벗어나면 발생(나가면)
+        window.onload = () => {
+            var imgbtn = document.getElementById('imgbtn');
+            // imgbtn.onmouseover = () =>{
+            //     console.log('>> imgbtn.onmouseover 실행');
+            //     imgbtn.firstElementChild.src = '../images/btn2_yellow.png'
+            // };
+            // imgbtn.onmouseout = () =>{
+            //     console.log('>> imgbtn.onmouseout 실행');
+            //     imgbtn.firstElementChild.src = '../images/btn2_gray.png'
+            // };
+
+            // addEventListener : 이벤트 중복 설정 가능
+            // addEventListener('이벤트명', 콜백함수)
+            // removeEventListener('이벤트명');
+            imgbtn.addEventListener('mouseover', () =>{
+                console.log('>> mouseover 실행');
+                imgbtn.firstElementChild.src = '../images/btn2_yellow.png'
+            });
+
+            imgbtn.addEventListener('mouseout', changeGray);
+            // () =>{
+            //     console.log('>> mouseout 실행');
+            //     imgbtn.firstElementChild.src = '../images/btn2_gray.png'
+            // });
+
+            function changeGray(){
+                console.log('>> mouseout 실행');
+                imgbtn.firstElementChild.src = '../images/btn2_gray.png'
+            }
+
+            // imgbtn.removeEventListener('mouseout',changeGray);
+        };
+    </script>
+    <style>
+        #btn1, #btn2{background-color: lightgray;}
+        #btn2:hover{background-color: yellow;}
+    </style>
+</head>
+
+<body>
+    <button id='btn1'>버튼1</button>
+    <button id='btn2'>버튼2</button>
+    <hr>
+
+    <a href="#" id='imgbtn'>
+        <img src='../images/btn2_gray.png' alt='버튼'>
+    </a>
+</body>
+</html>
