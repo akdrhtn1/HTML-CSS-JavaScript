@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery import 방식1-->
+ <!--  <script src="js/jquery-3.6.0.min.js"></script> -->
+    <!-- jQuery import 방식2<CDN 방식)-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        //JavaScript Dom 객체 다루기
+        window.onload = function(){
+            document.getElementById('id1').style.color = 'blue';
+        };
+
+        //jQuery 사용방식
+        $(document).ready(function(){
+            $('#id1').css('background','aqua');
+        });
+        
+        //2번째 jquery 사용방식
+        $().ready(function(){
+            $('#id1').css('border','3px double orange')
+        });
+
+        //----------------
+        //3번쨰 jQuery 사용방식 
+        $(function(){
+            $('#id1').css('background', 'green');
+        });
+    </script>
+</head>
+<body>
+    <h1 id='id1'>제이쿼리(jQuery)</h1>
+    
+    <script>
+      
+    </script>
+</body>
+</html>

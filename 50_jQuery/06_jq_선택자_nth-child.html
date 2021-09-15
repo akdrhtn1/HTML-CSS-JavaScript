@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('ul').css('background','orange');
+            $('ul>li').css('border','1px solid black')
+                      .css('margin','10px 0');
+
+            // $('ul>li:first').css('background','yellow');
+            // $('ul>li:last').css('background','aqua');
+
+            // : even , : odd - 0번 인덱스부터 시작 
+            // $('ul>li:even').css('background','yellow');
+            // $('ul>li:odd').css('background','aqua');
+
+            // :nth-child : 자녀중에 몇번째(1부터 시작)
+            $('ul>li:nth-child(1)').css('background','yellow');
+        });
+    </script>
+</head>
+<body>
+    <h1>제이쿼리 선택자</h1>
+    <ul>
+        <li>menu 1</li>
+        <li>menu 2</li>
+        <li>menu 3
+            <ol>
+                <li>sub1</li>
+                <li>sub2</li>
+            </ol>
+        </li>
+        <li>menu 4</li>
+        <li>menu 5</li>
+    </ul>
+    <hr>
+
+    <ul>
+        <li>menu 2 - 1</li>
+        <li>menu 2 - 2</li>
+        <li class='li3'> menu2 -3 </li>
+    </ul>
+</body>
+</html>
