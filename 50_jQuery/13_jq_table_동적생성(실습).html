@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<script>
+    //click 했을때 onclick function실행 추가 끝
+    // function
+    let $row;
+    let $col;
+    let $html;
+
+    $(function(){
+      $('#btn').on('click',()=>{
+          create();
+      })
+    });
+
+    function create(){
+      $row =  $('#row').val();
+      $col =  $('#col').val();
+
+      $html = ('<table> <thead>');
+      $html += ('<tr>');
+      for(let i=0; i<$col; i++){
+        $html += (`<th>항목${i+1}</th>`);
+      }
+      $html += ('</tr> </thead>');
+      $html += ('<tbody>');
+      for(let j=0; j<$row; j++){
+        $html += ('<tr>');
+          for(let k=0; k<$col; k++){
+            $html += (`<td>데이터 ${(j+1)}-${k+1}</td>`)
+          }
+          $html += ('</tr>');
+      }
+      $html += ('</tbody> </table>');
+      
+      $('#myDiv').append($html);
+    };
+</script>
+<style>
+    table{
+        border: 1px solid black;
+        margin-top: 20px;
+    }
+    td,th{
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <h1>실습</h1>
+    <input type = "text" id = "row" value = "2">행 &nbsp;
+    <input type = "text" id = "col" value = "3">열 &nbsp;
+    <button id = "btn">테이블생성</button>
+    <hr>
+    <div id = 'myDiv'>
+    </div>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>항목1</th>
+                <th>항목2</th>
+                <th>항목3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>데이터 1-1</td>
+                <td>데이터 1-2</td>
+                <td>데이터 1-3</td>
+            </tr>
+            <tr>
+                <td>데이터 2-1</td>
+                <td>데이터 2-2</td>
+                <td>데이터 2-3</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
