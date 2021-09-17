@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        var order = 1;
+        console.log(`${order++} : script 시작 첫번쨰 실행문 : ${$('#test').text()} :: ` );
+
+        $(document).ready(function(){
+            console.log(`${order++} : jQuery ready 시작  : ${$('#test').text()} :: ` );
+
+            $('#btn').click(function(){
+                console.log(`${order++} : btn click 시작  : ${$('#test').text()} :: ` );
+                call();
+                console.log(`${order++} : btn click 끝  : ${$('#test').text()} :: ` );
+            })
+            
+            console.log(`${order++} : jQuery ready 끝  : ${$('#test').text()} :: ` );
+
+        });
+        //$().readry(funtion(){})
+        //$(function(){});
+
+        function call(){
+            console.log(`${order++} : function call()내부:: : ${$('#test').text()} :: ` );
+        }
+        call();
+
+        console.log(`${order++} : head 끝나기 전 script 실행문:: : ${$('#test').text()} :: ` );
+    </script>
+</head>
+<body>
+    <h2>JavaScript 실행순서 확인 </h2>
+    <button id='btn'>함수 호출</button>
+    <button onclick="call()">call function 실행</button>
+    <p id='test'>p태그 문장</p>
+
+
+    <script>
+      
+        console.log(`${order++} : body 끝 위치 :: ${$('#test').text()} :: ` );
+    </script>
+
+</body>
+</html>

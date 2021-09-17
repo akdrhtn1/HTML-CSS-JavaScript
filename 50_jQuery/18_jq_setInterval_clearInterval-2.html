@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>타이머객체</title>
+    <script>
+        // Java,HTML, CSS, JavaScript, Jquery 문자열을 배열에 저장하고
+        // 1초마다 순차적으로 #myDiv 위치에 출력
+
+        let subject = ['Java', 'HTML', 'CSS' ,'JavaScript', 'jQuery'];
+        let index = 0;
+        let timer = null;
+
+        $(function(){
+            $('#startJQ').click(startTimer);
+
+            $('#stopJQ').click(stopTimer);
+
+
+ 
+        });
+        function startTimer(){
+                if(timer == null){
+                  timer = setInterval(function(){
+                      console.log('시작');
+                      $('#myDiv').html(subject[index++]);
+                      if (index >= subject.length) index=0;  
+                  }, 1000);
+              }
+            }
+            function stopTimer(){
+                clearInterval(timer);
+                timer = null;
+            }
+            
+
+        //javaScript 코드로 이벤트 연결
+        window.onload = function(){
+            console.log('>>> window.onload 실행');  
+            let startJS = document.getElementById('startJS');
+            let stopJS = document.getElementById('stopJS');
+
+            startJS.onclick = startTimer;
+            stopJS.onclick = stopTimer;
+
+       
+        };
+    </script>
+    <style>
+        div{ background-color: yellow; font-size: 2rem;}
+        
+    </style>
+</head>
+<body>
+    <button id='startJQ'>목록 보여주기(JQ 이벤트 연결)</button>
+    <button id='stopJQ'>중지(JQ 이벤트 연결)</button>
+    <hr><hr>
+    <!-- HTML에서 이벤트 연결-->
+    <button onclick="startTimer()">목록 보여주기(HTML) 이벤트 연결-인라인</button>
+    <button onclick="stopTimer()">중지(HTML) 이벤트 연결-인라인</button>
+
+    <hr><hr>
+    
+    <button id='startJS'>목록 보여주기(javaScript 이벤트 연결)</button>
+    <button id='stopJS'>중지(javascript 이벤트 연결)</button>
+    <hr><hr>
+
+    <p>Java, HTML, CSS, JavaScript, jQuery</p>
+    <div id='myDiv'>Java</div>
+</body>
+</html>

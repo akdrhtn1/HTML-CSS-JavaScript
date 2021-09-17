@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>이미지전환(1개) - 배열</title>
+<style>
+    div{
+        width: 300px;
+        margin: 0 auto;
+        position: relative;
+    }
+    div>a{
+        /* 위치 설정 */
+        position: absolute;
+        top: 150px; left: 20px;
+        /*모양, 색상 */
+        background-color: yellow;
+        width: 50px;
+        height: 50px;
+        border-radius: 25%;
+
+        /* 텍스트 설정 */
+        text-decoration: none;
+        text-align: center;
+        /* 텍스트 중앙 정렬 */
+        line-height: 50px;  
+    }
+    #next{
+        left: 250px;
+    }
+</style>
+<script>
+    //배열에 이미지 파일명을 저장해서 사용
+
+    //배열 인덱스 0: bimg01.jps , 1:bimg02.jpg, 2:bimg03.jpg, ....
+    //배열에 데이터 입력
+    //let imgNames = ['bimg01.jpg']
+    let imgNames = new Array();
+    let index = 0;
+    for(let i=0; i<10;i++){
+        let imgNum = i+1;
+
+        imgNum = (imgNum<10) ? "0"+ imgNum : imgNum;
+        imgNames[i] = 'bimg' + imgNum +'.jpg';
+    }
+    
+    
+    $(function(){
+        $('#prev').click(function(){
+
+           if(index<0) index =9;
+           $('img').prop('src',`images/${imgNames[index--]}`); 
+        
+        });
+        
+        $('#next').click(function(){
+
+            if(index>9) index =0;
+            $('img').prop('src',`images/${imgNames[index++]}`); 
+        });
+
+
+    });
+
+</script>
+
+</head>
+<body>
+    <div>
+        <img src="images/bimg01.jpg" alt="상품이미지">
+        <a id="prev" href="#">prev</a>
+        <a id="next" href="#">next</a>
+        <p> </p>
+    </div>
+</body>
+</html>

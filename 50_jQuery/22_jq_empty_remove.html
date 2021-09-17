@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>empty, remove</title>
+    <script>
+        $().ready(function(){
+            //empty() : 기준태그의 자녀태그(내용) 모두 삭제
+            $('#empty').click(function(){
+                $('#myDiv').empty();
+            });
+
+            // remove() : 기준(선택) 태그 삭제
+            $('#remove').click(function(){
+                $('#myDiv').remove();
+            });
+
+            $('#removeParam').click(function(){
+                $('#myDiv>p').remove('.remove');
+            });
+
+            //append() : 기준(선택) 태그에 자녀태그로 뒤쪽에 추가
+            $('#append').click(function(){
+                $('#myDiv').append('<p>append 버튼으로 추가</p>');
+            });
+
+            // html() : 기준(선택)태그 내의 html 요소 읽기, 쓰기
+            $('#html').click(function(){
+                $('#myDiv').html('<p>html() 사용 수정처리</p>');
+            });
+        });
+    </script>   
+    <style>
+        #myDiv { border : 2px solid blue; height: 200px;}
+        p {background-color: tomato;}
+    </style>
+</head>
+<body>
+    <button id='empty'>초기화(empty)</button>
+    <button id='remove'>삭제(remove)</button>
+    <button id='removeParam'>삭제(remove)</button>
+    <button id='append'>추가(append)</button>
+    <button id='html'>수정(html))</button>
+    
+    <hr>
+    <div id='myDiv'>
+        <p>Java</p>
+        <p class='remove'>HTML</p>
+        <p>CSS</p>
+    </div>
+    <hr>
+    <h2>div 다음에 있는 h2태그</h2>
+</body>
+</html>

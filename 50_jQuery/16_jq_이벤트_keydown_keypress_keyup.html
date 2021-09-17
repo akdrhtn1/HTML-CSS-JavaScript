@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        // 키보드 관련 이벤트
+        // 발생순서 : keydown -> keypress -> keyup
+        // keyup : 한 번만 발생
+        // keydown, keypress : 키가 눌린 상태에서 계속 발생 
+        $(function(){
+            $('#pwd').keydown(function(){
+                console.log('>> keydown 이벤트 발생');
+            }).keypress(function(){
+                console.log('>> keypress 이벤트 발생');
+            }).keyup(()=>{
+                console.log('>> keyup 이벤트 발생');
+            });
+
+            //비밀번호 확인란에 키입력되면  비밀번호 비교후 결과 출력
+            $('#pwd2').keyup(function(){
+        
+                if($('#pwd').val() == $('#pwd2').val()){
+                    $('#mvDiv').html('암호가 일치합니다  : ' + 
+                    $('#pwd').val()+", " + $('#pwd2').val())
+                    .css('color','blue');
+                    
+                }else{
+                    $('#mvDiv').html('암호가 다릅니다. : ' + 
+                    $('#pwd').val()+", " + $('#pwd2').val())
+                    .css('color','red');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>비밀번호 : 
+        <input type='password' name='pwd' id='pwd'>
+    </p>
+    <p>비밀번호확인: 
+        <input type='password' name='pwd2' id='pwd2'>
+    </p>
+    <div id='mvDiv'>암호를 입력하세요</div>
+</body>
+</html>

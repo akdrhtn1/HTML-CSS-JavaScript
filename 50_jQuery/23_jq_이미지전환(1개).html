@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>이미지전환(1개)</title>
+<style>
+    div{
+        width: 300px;
+        margin: 0 auto;
+        position: relative;
+    }
+    div>a{
+        /* 위치 설정 */
+        position: absolute;
+        top: 150px; left: 20px;
+        /*모양, 색상 */
+        background-color: yellow;
+        width: 50px;
+        height: 50px;
+        border-radius: 25%;
+
+        /* 텍스트 설정 */
+        text-decoration: none;
+        text-align: center;
+        /* 텍스트 중앙 정렬 */
+        line-height: 50px;  
+    }
+    #next{
+        left: 250px;
+    }
+</style>
+<script>
+    //prev,next : 버튼이 클릭되어 있을 떄 처리
+    // prev : 이전 이미지 표시, next: 다음 이미지 표시
+    $(function(){
+        let imgNum = 1;
+        //next 클릭시 : 다음 이미지 표시(img태그 src 속성값 변경)
+        $('#next').click(function(){
+            imgNum++;
+            if(imgNum>10) imgNum =1; // 처음 이미지 번호로 변경
+            if(imgNum < 10 ){
+                imgNum = "0"+ imgNum;
+     
+            }
+
+        
+            // if(imgNum == 10){
+            //     $('p').html(' 다음을 누르시면 다시 처음으로 돌아옵니다..')
+            //     .css('color','blue');    
+            //  }else{
+            //      $('p').remove();
+            //  }  
+
+            $('img[alt="상품이미지"]').prop('src',`images/bimg${imgNum}.jpg`);
+        });
+
+        // (실습)prev 버튼 클릭시  : 이전 이미지 표시 
+        $('#prev').click(function(){
+            imgNum--;
+            if(imgNum<1) imgNum =10; // 처음 이미지 번호로 변경
+
+            imgNum = (imgNum<10) ? "0"+ imgNum : imgNum;
+    
+
+            $('img[alt="상품이미지"]').prop('src',`images/bimg${imgNum}.jpg`);
+        });
+    });
+
+</script>
+
+</head>
+<body>
+    <div>
+        <img src="images/bimg01.jpg" alt="상품이미지">
+        <a id="prev" href="#">prev</a>
+        <a id="next" href="#">next</a>
+        <p> </p>
+    </div>
+</body>
+</html>
