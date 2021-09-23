@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<script>
+    $(function(){
+        $("#go").click(() =>{
+            $("#myDiv").animate({left : "+=200", top:"+=200"}, 3000);
+
+
+        });
+        $("#back").click(() =>{
+            $("#myDiv").animate({left : "-=200", top:"-=200"}, 3000);
+        });
+        $("#stop").click(() =>{
+            $("#myDiv").stop(); //현재 진행중인 동작을 취소 (멈춤)
+        });
+
+    });
+</script>
+<style>
+    #myDiv{
+        position: absolute;
+
+    }
+</style>
+<body>
+    <button id="go">이동</button>
+    <button id="back">반대로 이동</button>
+    <button id="stop">정지</button>
+    <hr>
+    <div id="myDiv">
+        <img src="images/image1.gif" alt="이미지1">
+
+    </div>
+</body>
+</html>

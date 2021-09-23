@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animate, clearQueue</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<script>
+    $(function(){
+        //h1 태그를 우측으로 300px 만큼 3초동안 이동
+        $('#run').click(()=>{
+            $('h1').animate({
+                "margin-left" : "300px",
+            },1000).animate({
+                "margin-left" : "0px",
+            });
+
+        });
+        $("#stop").click(()=>{
+            $("h1").stop();
+        });
+
+        //두 번 역속 stop 처리
+        $("#stop-stop").click(()=>{
+            $("h1").stop().stop();
+        });
+
+        //예정된 작업만 취소 -큐(Queue)에 저장된 예약동작 취소
+        // => 기존 작업은 실행됨
+        $("#clearQueue").click(()=>{
+            $("h1").clearQueue(); //큐에 저장된 작업 취소처리
+        });
+
+        // 예정된 작업 취소하고 진행중인 작업도 중단
+        $("#clearQueueStop").click(()=>{
+            // 현재 동작을 중단시키는 순간 큐의 저장된 동작이  바로 실행된다.
+            //$("h1").stop().clearQueue(); 
+            
+            $("h1").clearQueue().stop(); //큐에 저장된 작업 취소처리
+        });
+
+        //stop 처리시 clearQueue 설정을 true 처리
+        $("#stop-true").click(()=>{
+            $('h1').stop(true);
+        })
+    });
+</script>
+<style>
+    h1{
+        margin-left: 200px;
+    }
+</style>
+<body>
+    <button id="run">run</button>
+    <button id="stop">stop</button>
+    <button id="stop-stop">stop stop</button>
+    <button id="clearQueue">clearQueue</button>
+    <button id="clearQueueStop">clearQueueStop</button>
+    <button id="stop-true">stop(true)</button>
+    <hr>
+    <h1>abcde</h1>
+</body>
+</html>

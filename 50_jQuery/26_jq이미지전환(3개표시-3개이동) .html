@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<script>
+    //appand
+    $(function(){
+
+        $('#next').click(function(){
+            let $nextle = $('#imgUl > li').slice(0,3);
+
+            $('#imgUl').append($nextle);
+        });
+
+
+        
+        $('#prev').click(function(){
+    
+
+            $('#imgUl').prepend($('#imgUl > li').slice(-3));
+        });
+    });
+</script>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #simgs{
+        overflow: hidden;
+        width: 528px;
+        height: 176px;
+        border: 1px solid black; 
+        position: relative;
+        left : 50px;     
+          
+    }
+
+    
+    #simgs > ul{
+        list-style: none;
+    }
+    #simgs > ul > li{
+        float: left;
+    }
+    #simgs > a{
+        clear: both;
+        position: absolute;
+        width: 50px; height: 50px;    
+        background: yellow;
+        border-radius: 10px;
+        top:70px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 1.3rem;
+        
+    }
+    #prev{
+        left : 0px;
+    }
+    #next{
+        right: 0px;
+    }
+</style>
+<body>
+    <div id="simgs">
+        <ul id="imgUl">
+            <li><img src="images/simg01.jpg"></li>
+            <li><img src="images/simg02.jpg"></li>
+            <li><img src="images/simg03.jpg"></li>
+            <li><img src="images/simg04.jpg"></li>
+            <li><img src="images/simg05.jpg"></li>
+            <li><img src="images/simg06.jpg"></li>
+            <li><img src="images/simg07.jpg"></li>
+            <li><img src="images/simg08.jpg"></li>
+            <li><img src="images/simg09.jpg"></li>
+            <li><img src="images/simg10.jpg"></li>
+        </ul>
+        <a id="prev">&lt;&lt;</a>
+        <a id="next">&gt;&gt;</a>
+    </div>
+</body>
+</html>
