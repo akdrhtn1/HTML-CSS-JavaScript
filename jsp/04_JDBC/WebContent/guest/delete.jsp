@@ -22,7 +22,7 @@
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 
-	
+	int result = 0;
 	StringBuilder sql = new StringBuilder();
 	try{
 		//1. 드라이버 로딩
@@ -35,19 +35,32 @@
 		pstmt = conn.prepareStatement(sql.toString());
 		pstmt.setInt(1,sabun);
 		
-		int result = pstmt.executeUpdate();
-		%>
-	<script>
-		let result = <%=result%>;
-		alert(result + "건이 삭제 되었습니다.");
-	</script>	
-	
-<% 
+		result = pstmt.executeUpdate();
+
 	if(result >0){ 
 		response.sendRedirect("list.jsp");	
 		}
 	}catch(Exception e){
+		result = -999;
 		e.printStackTrace();
+	}
+	
+	if(result == 0 ){ //SQL문장은 정상실행되었으나 데이터가 없어서 삭제 못함
+%>
+		<script>
+			alert("[삭제실패] 데이터가 없어서 삭제하지 못했습니다.\n 목록페이지로 이동하겠습니다.");
+			location.href="list.jsp";
+		</script>
+<% 		
+	}else if(result > 0){ //SQL 문장은 정상실행 + 데이터 삭제 처리
+
+%>
+		<script>
+			alert("[삭제완료] 삭제완료하고 목록페이지로 이동합니다.");
+			location.href="list.jsp";
+		</script>
+<% 	
+		
 	}
 
 %>

@@ -39,9 +39,9 @@
 			pstmt.setInt(3, sabun);
 
 			int result = pstmt.executeUpdate();
-			
+		
 			if(result >0){
-				response.sendRedirect("list.jsp");
+				response.sendRedirect("detail.jsp?sabun="+sabun);
 			}
 		}catch(Exception e){
 			e.printStackTrace();
