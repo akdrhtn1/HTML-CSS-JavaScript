@@ -49,10 +49,10 @@
 	
 	#container th {
 		background : #9cf;
-		border : 1px solid black;
+
 	}
-	#container td { border : 1px solid black; }
-	
+
+	th, td { border: 1px solid black;}
 	#container .center{text-align : center; }
 </style>
 </head>
@@ -87,7 +87,7 @@
 			 	<c:forEach var="vo" items="${attr_list }">
 			 		<tr>
 						<td class="center">${vo.getIdx() }</td>
-						<td class="center">${vo.name }</td>
+						<td class="center"><a href="onlist.jsp?idx=${vo.idx }">${vo.name }</a></td>
 						<td class="center">${vo.subject }</td>
 						<td>${vo.regdate }</td>
 					</tr>

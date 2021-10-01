@@ -1,7 +1,18 @@
 package com.bc.mybatis;
 
 public class GuestbookVO {
-	private String idx, name, subject, email, pwd, regdate;
+	private String idx, name, subject, content, email, pwd, regdate;
+
+	
+	
+	
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
 
 	public String getIdx() {
 		return idx;

@@ -1,0 +1,23 @@
+#container{
+		width: 512px; 
+		margin: auto;
+
+	}
+	#container h2,p{
+		text-align : center;
+	}
+	#container table{
+
+		width: 100%;
+		padding : 0 5px;
+		border : 1px solid black;
+		border-collapse: collapse;
+	}
+	
+	#container th {
+		background : #9cf;
+
+	}
+
+	th, td { border: 1px solid black;}
+	#container .center{text-align : center; }
