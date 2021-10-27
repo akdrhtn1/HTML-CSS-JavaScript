@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="Collection" class="com.test.build.CollectionInter">
+		<property name="addrlist">
+		<list>
+			<value>아나리아</value>
+			<value>리아나</value>
+			<value>나리아</value>
+		</list>	
+		</property>
+		
+		<property name="map">
+		<map>
+			<entry key="이름" value="박상민"></entry>
+			<entry key="나이" value="18"></entry>
+			<entry key="성별" value="남"></entry>
+		</map>
+		</property>
+	</bean>
+	
+	
+	<bean id="tv2" class="com.test.build.SamsungTV">
+		<property name="item1" value="17"></property>
+		<property name="item2" value="음성"></property>
+		<property name="item3" value="78"></property>
+	</bean>
+	
+</beans>
